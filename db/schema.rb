@@ -10,14 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_03_021426) do
+ActiveRecord::Schema.define(version: 2020_09_13_112406) do
 
   create_table "book_comments", force: :cascade do |t|
     t.integer "user_id"
+    t.integer "book_id"
     t.text "comment"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "book_id"
   end
 
   create_table "books", force: :cascade do |t|
@@ -30,14 +30,7 @@ ActiveRecord::Schema.define(version: 2021_08_03_021426) do
 
   create_table "favorites", force: :cascade do |t|
     t.integer "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.integer "book_id"
-  end
-
-  create_table "relationships", force: :cascade do |t|
-    t.integer "follower_id"
-    t.integer "followed_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -53,7 +46,6 @@ ActiveRecord::Schema.define(version: 2021_08_03_021426) do
     t.string "profile_image_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "title"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

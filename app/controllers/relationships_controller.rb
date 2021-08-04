@@ -1,29 +1,23 @@
 class RelationshipsController < ApplicationController
-  before_action :set_user
-  
+
   def create
+    @user = User.find(params[:id])
     following = current_user.follow(@user)
     if following.save
-      redirect_to @user
+      redirect_back(fallback_location: root_path)
+    # フラッシュメッセージ
     else
-      redirect_to @user
+      redirect_back(fallback_location: root_path)
     end
   end
-  
+
   def destroy
-    following = current_user.unfollow(@user)
-    if following.destroy
-      redirect_to @user
-    else
-      redirect_to @user
-    end
+    @user = User.find(params[:id])
+    current_user.unfollow(@user)
+    redirect_back(fallback_location: root_path)
   end
-  
-  
-  private
-  def set_user
-    @user = User.find(params[:relationship][:follow_id])
-  end
+
+
 
 end
 

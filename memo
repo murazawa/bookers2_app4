@@ -7,8 +7,13 @@ git push origin main
 
 binding調べるる
 
+      いいね   非同期のやつ
 
-      <div id="favoites_btn_<%= @book.id %>">
+         id="favoites_btn_<%= @book.id %>">
         <%= render 'favorites/favorite', book: @book %>
-      </div>
-      非同期のやつ
+      
+
+      
+      コメント　非同期のやつ
+         id="comment_<%= @book.id %>"
+      $("#comment_<%= @book.id %>").html("<%= j(render 'books/comment', book: @book, book_comment: @book_comment) %>");

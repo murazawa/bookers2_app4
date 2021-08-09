@@ -16,7 +16,15 @@
       <td>
          <%= book_yesterday.count %>件
       </td>
-      <td>225%</td>
+      <td>
+        <% if book_yesterday.count == 0 %>
+          <%= (book_today.count * 100) %>%
+        <% else %>
+          <%= day_before = book_today.count / book_yesterday.count.to_f do %>
+            <%= (day_before.count * 100) %>%
+          <% end %>
+        <% end %>
+      </td>
     </tr>
   </tbody>
 </table>

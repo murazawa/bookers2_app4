@@ -10,9 +10,21 @@
   <tbody>
     <tr>
       <th scope="row"></th>
-      <td>75件</td>
-      <td>5件</td>
-      <td>1050%</td>
+      <td>
+        <%= book_week.count %>件
+      </td>
+      <td>
+        <%= book_lastweek.count %>件
+      </td>
+      <td>
+        <% if book_lastweek.count == 0 %>
+          <%= (book_week.count * 100) %>%
+        <% else %>
+          <%= week_before = book_week.count / book_lastweek.count.to_f do %>
+            <%= (week_before * 100) %>%
+          <% end %>
+        <% end %>
+      </td>
     </tr>
   </tbody>
 </table>

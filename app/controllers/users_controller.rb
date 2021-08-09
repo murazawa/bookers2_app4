@@ -8,6 +8,8 @@ class UsersController < ApplicationController
     @book = Book.new
     @book_today = @books.created_today #モデルのスコープ
     @book_yesterday = @books.created_yesterday #モデルのスコープ
+    @book_week = @books.created_this_week
+    @book_lastweek = @books.created_last_week_ago
   end
 
   def index

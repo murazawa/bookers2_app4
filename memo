@@ -24,3 +24,23 @@ binding調べるる
             _post-week
             
             scope :スコープの名前, -> { 条件式 }
+
+
+    昨日と今日の投稿。数はcountメソッドを使って表示しています。
+if文を使って条件分岐し、
+                          前日比　=　昨日の投稿数÷前日の投稿数
+を定義しています。
+また、to_fメソッドはオブジェクトの少数点までの数値も表示してくれるメソッドです。
+
+        <% if book_yesterday.count == 0 %>
+          <%= (book_today.count * 100) %>%
+        <% else %>
+        
+    rails（activesupport）
+t = Time.current
+t.prev_week(:friday) # 先週の金曜日
+t.next_week(:friday) # 来週の金曜日
+
+t + (5 - t.wday).days # 今週の金曜日
+t + (4 - t.wday).days # 今週の木曜日
+

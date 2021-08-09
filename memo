@@ -22,3 +22,5 @@ binding調べるる
             投稿機能の詳細画面
             _post-day
             _post-week
+            
+            scope :スコープの名前, -> { 条件式 }

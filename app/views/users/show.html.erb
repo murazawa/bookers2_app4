@@ -15,7 +15,7 @@
       <!--非同期-->
       <h2>投稿数の前日比、前週比</h2>
 
-       <%= render 'books/post-day' %>
+       <%= render 'books/post-day', book_today: @book_today, book_yesterday: @book_yesterday %>
        <%= render 'books/post-week' %>
     </div>
   </div>

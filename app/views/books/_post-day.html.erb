@@ -1,0 +1,22 @@
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">day</th>
+      <th scope="col">本日</th>
+      <th scope="col">前日</th>
+      <th scope="col">前日比</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row"></th>
+      <td>
+         <%= current_user.books.where('created_at', Date.today).count %>件
+      </td>
+      <td>
+         <%= current_user.books.where('created_at', Date.yesterday).count %>件
+      </td>
+      <td>225%</td>
+    </tr>
+  </tbody>
+</table>

@@ -17,3 +17,8 @@ binding調べるる
       コメント　非同期のやつ
          id="comment_<%= @book.id %>"
       $("#comment_<%= @book.id %>").html("<%= j(render 'books/comment', book: @book, book_comment: @book_comment) %>");
+      
+      
+            投稿機能の詳細画面
+            _post-day
+            _post-week

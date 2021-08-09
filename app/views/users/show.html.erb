@@ -11,9 +11,12 @@
     <div class='col-md-8 offset-md-1'>
       <h2>Books</h2>
       <!--非同期-->
-        
-          <%= render 'books/index',books: @books, book: @book %>
-        
+        <%= render 'books/index',books: @books, book: @book %>
+      <!--非同期-->
+      <h2>投稿数の前日比、前週比</h2>
+
+       <%= render 'books/post-day' %>
+       <%= render 'books/post-week' %>
     </div>
   </div>
 </div>

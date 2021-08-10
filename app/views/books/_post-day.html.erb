@@ -20,9 +20,8 @@
         <% if book_yesterday.count == 0 %>
           <%= (book_today.count * 100) %>%
         <% else %>
-          <%= day_before = book_today.count / book_yesterday.count.to_f do %>
-            <%= (day_before.count * 100) %>%
-          <% end %>
+          <% @day_before = book_today.count / book_yesterday.count.to_f %>
+          <%= (@day_before * 100).round %>%
         <% end %>
       </td>
     </tr>

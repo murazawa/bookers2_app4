@@ -20,9 +20,8 @@
         <% if book_lastweek.count == 0 %>
           <%= (book_week.count * 100) %>%
         <% else %>
-          <%= week_before = book_week.count / book_lastweek.count.to_f do %>
-            <%= (week_before * 100) %>%
-          <% end %>
+          <% @week_before = book_week.count / book_lastweek.count.to_f %>
+          <%= (@week_before * 100).round %>%
         <% end %>
       </td>
     </tr>

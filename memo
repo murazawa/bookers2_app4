@@ -73,3 +73,5 @@ t + (4 - t.wday).days # 今週の木曜日
     </tr>
   </tbody>
 </table>
+
+er図むず
